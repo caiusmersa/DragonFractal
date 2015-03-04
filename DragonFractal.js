@@ -3,6 +3,13 @@ var context = canvas.getContext("2d");
 var iterations, folds, mirror, pos_x, pos_y, dir, last_x, last_y;
 var x, y, i;
 
+var gradient = context.createLinearGradient(375, 125, 647, 0);
+gradient.addColorStop(0, "white");
+gradient.addColorStop(1, "olive");
+
+context.fillStyle = gradient;
+context.fillRect(300, 0, 647, 400);
+
 for (x = 1; x < 647; x += 10) {
   context.moveTo(x, 0);
   context.lineTo(x, 400);
@@ -16,7 +23,7 @@ for (y = 1; y < 400; y += 10) {
 context.strokeStyle = "#eee";
 context.stroke();
 
-iterations = 16;
+iterations = 15;
 folds = "R";
 for (i = 1; i < iterations; i++) {
   mirror = "";
@@ -48,6 +55,7 @@ context.stroke();
 
 context.textAlign = "right";
 context.textBaseline = "bottom";
-context.font = "bold 14px Anonymous Pro";
+context.font = "bold 17px Anonymous Pro";
+context.fillStyle = "#000";
 context.fillText("Iterations: " + iterations, 642, 395);
 
