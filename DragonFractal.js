@@ -16,7 +16,7 @@ for (y = 1; y < 400; y += 10) {
 context.strokeStyle = "#eee";
 context.stroke();
 
-iterations = 17;
+iterations = 16;
 folds = "R";
 for (i = 1; i < iterations; i++) {
   mirror = "";
@@ -45,3 +45,9 @@ for (i = 0; i < folds.length; i++) {
 
 context.strokeStyle = "#000";
 context.stroke();
+
+context.textAlign = "right";
+context.textBaseline = "bottom";
+context.font = "bold 14px Anonymous Pro";
+context.fillText("Iterations: " + iterations, 642, 395);
+
