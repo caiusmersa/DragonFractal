@@ -6,6 +6,14 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:700' rel='stylesheet' type='text/css'>
 		<style>
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				width: 657px;
+				padding:5px;
+				/*padding-bottom:10px;*/
+				/*padding-top:10px;*/
+			}
 			body {
 				font-family: 'Anonymous Pro';
 			}
@@ -13,13 +21,19 @@
 	</head>
 
 	<body>
-		<center>
+		<div>
 			A dandy rendering of the dragon curve
 			<br>
+			<canvas id="pic"
+							width="647" height="400"
+							style="border: 2px dashed purple">
+			</canvas>
 			<br>
-			<canvas id="pic" width="647" height="400" style="border: 2px dashed purple"></canvas>
-		</center>
-
+			<input 	type="range"
+							min="0" max="15"
+							value="15"
+			>
+		</div>
 		<script src="DragonFractal.js"></script>
 	</body>
 </html>

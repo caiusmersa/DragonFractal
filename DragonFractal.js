@@ -1,3 +1,7 @@
+//Other stuff to experiment with:
+//--Canvas shadows (see Mihai Sucan)
+//--How to remove the <br> tags and use CSS?
+
 var canvas = document.getElementById("pic");
 var context = canvas.getContext("2d");
 var gradient;
