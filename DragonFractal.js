@@ -5,7 +5,7 @@ var canvas = document.getElementById("pic");
 var it_slider = document.getElementById("it_slider");
 var context = canvas.getContext("2d");
 var gradient;
-var iterations = 15, folds, mirror, pos_x, pos_y, dir, last_x, last_y;
+var iterations = 14, folds, mirror, pos_x, pos_y, dir, last_x, last_y;
 var x, y, i;
 
 function createGradient(color) {
@@ -46,10 +46,10 @@ function render() {
     console.log(folds);
   }
 
-  lineLen = 4;
+  var lineLen = iterations >= 10 ? iterations >= 15 ? 1 : 4 : iterations >= 7 ? 9 : 30;
   context.beginPath();
-  pos_x = 700;
-  pos_y = 350;
+  pos_x = iterations < 15 ? 700 : 200;
+  pos_y = iterations < 15 ? 350 : 250;
   context.moveTo(pos_x, pos_y);
   pos_y += lineLen;
   context.lineTo(pos_x, pos_y);
@@ -74,7 +74,8 @@ function render() {
   context.textBaseline = "bottom";
   context.font = "bold 20px Anonymous Pro";
   context.fillStyle = "#000";
-  context.fillText("Iterations: " + iterations, 965, 595);
+  context.fillText("iterations: " + iterations, 965, 595);
+  context.fillText(Math.pow(2, iterations) + (iterations > 0 ? " segments" : " segment") + " of pixel length " + lineLen, 965, 570);
 }
 render();
 
@@ -95,4 +96,6 @@ function changeIterations() {
   iterations = it_slider.value;
   render();
 }
-it_slider.addEventListener("click", changeIterations, false);
+it_slider.addEventListener("keyup", changeIterations, false);
+it_slider.addEventListener("change", changeIterations, false);
+
