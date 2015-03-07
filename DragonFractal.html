@@ -9,27 +9,38 @@
 			div {
 				margin-left: auto;
 				margin-right: auto;
-				width: 657px;
-				padding:5px;
-				/*padding-bottom:10px;*/
-				/*padding-top:10px;*/
+				width: 980px;
+			}
+			canvas {
+				margin-top: 5px;
+				margin-bottom: 5px;
 			}
 			body {
+				color: #74BBE9;
+  			background-color: #4C554E;
 				font-family: 'Anonymous Pro';
+				margin:8px;
+			}
+			h3 {
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+			input {
+				border: 1px dotted black;
+				background-color: #5D665F;
+				float: right;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div>
-			A dandy rendering of the dragon curve
-			<br>
+			<h3>A dandy rendering of the dragon curve</h3>
 			<canvas id="pic"
-							width="647" height="400"
-							style="border: 2px dashed purple">
+							width="970" height="600"
+							style="border: 2px dashed #CDA38F">
 			</canvas>
-			<br>
-			<input 	type="range"
+			<input	id="it_slider" type="range"
 							min="0" max="15"
 							value="15"
 			>
