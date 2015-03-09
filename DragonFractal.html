@@ -2,48 +2,64 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Dragon Fractal</title>
+		<title>caius.co - Dragon Fractal</title>
+
+		<link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="caius.css" type="text/css">
 
 		<link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:700' rel='stylesheet' type='text/css'>
 		<style>
-			div {
+			div.main {
 				margin-left: auto;
 				margin-right: auto;
 				width: 980px;
+			}
+
+			div.padder {
+				margin-bottom: 60px;
 			}
 			canvas {
 				margin-top: 5px;
 				margin-bottom: 5px;
 			}
-			body {
-				color: #74BBE9;
-  			background-color: #4C554E;
-				font-family: 'Anonymous Pro';
-				margin:8px;
-			}
 			h3 {
 				margin-top: 0px;
 				margin-bottom: 0px;
 			}
-			input {
-				border: 1px dotted black;
+			input.iter {
+				border: 1px dotted #CDA38F;
 				background-color: #5D665F;
 				float: right;
+				width: 200px;
+				height: 30px;
+			}
+			input.chk, label.chk {
+				border: 1px dotted #CDA38F;
+				background-color: #5D665F;
+				float: left;
+				height: 30px;
 			}
 		</style>
 	</head>
 
 	<body>
-		<div>
-			<h3>A nifty rendering of the dragon curve</h3>
-			<canvas id="pic"
-							width="970" height="600"
-							style="border: 2px dashed #CDA38F">
-			</canvas>
-			<input	id="it_slider" type="range"
-							min="0" max="18"
-							value="15"
-			>
+		<div class="main">
+			<div class="padder">
+				<h3>A nifty rendering of the dragon curve</h3>
+				<canvas id="pic"
+								width="970" height="600"
+								style="border: 2px dashed #CDA38F">
+				</canvas>
+				<input 	class="chk" type="checkbox" id="color_check"/>
+				<label  class="chk" for="color_check">-random colors-</label>
+				<input 	class="chk" type="checkbox" id="grid_check"/>
+				<label 	class="chk" for="grid_check">-toggle grid-</label>
+				<input	class="iter" id="it_slider" type="range" width="200"
+								min="0" max="18"
+								value="15"
+				/>
+			</div>
+			Learn more about the <a href="https://en.wikipedia.org/wiki/Dragon_curve">dragon curve on Wikipedia.</a>
 		</div>
 		<script src="DragonFractal.js"></script>
 	</body>
